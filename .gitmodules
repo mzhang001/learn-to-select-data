@@ -1,0 +1,3 @@
+[submodule "bilstm_tagger"]
+	path = bilstm_tagger
+	url = git@github.com:mzhang001/bilstm-aux.git
