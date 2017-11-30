@@ -13,8 +13,8 @@ import copy
 import numpy as np
 from scipy import stats
 from sklearn.cross_validation import train_test_split
-
-# from robo.fmin import bayesian_optimization
+#from bayes_opt import BayesianOptimization
+from robo.fmin import bayesian_optimization
 
 import task_utils
 import data_utils
@@ -439,6 +439,7 @@ if __name__ == '__main__':
             print('Upper limits shape:', upper.shape)
 
             print('Running Bayesian Optimization...')
+            # res = BayesianOptimization(objective_function, )
             res = bayesian_optimization(objective_function, lower=lower,
                                         upper=upper,
                                         num_iterations=args.num_iterations)
