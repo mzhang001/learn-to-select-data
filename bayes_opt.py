@@ -14,7 +14,7 @@ import numpy as np
 from scipy import stats
 from sklearn.cross_validation import train_test_split
 
-from robo.fmin import bayesian_optimization
+# from robo.fmin import bayesian_optimization
 
 import task_utils
 import data_utils

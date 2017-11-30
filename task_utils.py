@@ -20,7 +20,7 @@ from bist_parser.bmstparser.src import mstlstm
 from bist_parser.bmstparser.src.utils import vocab_conll, write_conll,\
     write_original_conll
 
-from bilstm_tagger.src.simplebilty import SimpleBiltyTagger, load
+from bilstm_tagger.src.simplebilty import SimpleBiltyTagger, load_tagger
 
 NUM_EPOCHS = 50
 PATIENCE = 2
@@ -199,7 +199,7 @@ def train_and_evaluate_pos_bilstm(train_data, train_labels, val_data, val_labels
                patience=PATIENCE, model_path=model_path)
 
     # load the best model and remove the model files
-    tagger = load(model_path)
+    tagger = load_tagger(model_path)
     os.unlink(model_path)
     os.unlink(model_path + '.pickle')  # file used to save the parameters
     val_correct, val_total = tagger.evaluate(val_X, val_Y)
